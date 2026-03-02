@@ -45,3 +45,14 @@
 - 飞书 bitable 创建时会自动生成空行，需要手动删除（batch_delete API）
 - 小红书反爬很强，服务器IP被拦截，需要专门的skill
 - ClawHub 有限速，频繁调用会被 rate limit
+- 知乎封禁更新：搜狗微信搜索可找到公众号转载 → curl+mobile UA 抓 js_content div 提取全文
+- 飞书文档 write API 有内容长度限制，长文档需分段 append
+- 微信公众号 web_fetch 只拿标题（JS渲染），curl 抓 HTML 的 js_content div 可提取全文
+
+## 用户工作背景（大模型后训练）
+- zhl 做超大规模大模型后训练（post-training），目标提升基座模型通用能力
+- 已实现：纯 RL（GRPO/DAPO）+ OPD（On-Policy Distillation）
+- 评估方法论：The Bitter Lesson — scale with compute > human knowledge injection
+- 待实验：POPE（难题 prefix 探索，arXiv:2601.18779）+ OPSD（自蒸馏，github.com/siyan-zhao/OPSD）
+- 飞书实验计划文档：https://feishu.cn/docx/M8PRdLyWmoJ3CexP09scjrGEnOg
+- 飞书待办看板：https://feishu.cn/docx/UseZdL4IRoYMMYxPbrXcI0oXnNg

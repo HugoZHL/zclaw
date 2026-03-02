@@ -245,6 +245,27 @@ bash ~/.openclaw/workspace/scripts/restore.sh
 # 然后 openclaw gateway start
 ```
 
+## 🚀 自我升级 — 持续进化
+
+**核心原则：主动寻找能力提升机会，但安全第一。**
+
+### 自动巡检（每周一、四 14:00 北京时间）
+- 更新所有已安装技能到最新版本
+- 搜索 ClawHub 发现新技能
+- 评估与 zhl 需求的相关性（量化交易、效率提升、信息获取、自动化）
+
+### 安装风险分级
+| 级别 | 说明 | 操作 |
+|------|------|------|
+| 🟢 低风险 | 纯信息查询、工具类（天气、日历、搜索） | 直接安装 |
+| 🟡 中风险 | 涉及外部 API、服务集成（邮件、监控） | 安装并报告 |
+| 🔴 高风险 | 涉及支付、账号、安全敏感操作 | **不装，先请示** |
+
+### 安装后必做
+1. 验证技能可用
+2. 更新备份脚本的 skills manifest
+3. 在群里报告安装了什么、为什么
+
 ## Make It Yours
 
 This is a starting point. Add your own conventions, style, and rules as you figure out what works.
