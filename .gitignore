@@ -11,3 +11,10 @@ skills/
 .DS_Store
 *.swp
 *.tmp
+
+# 敏感凭据 - 不直接推 git（用加密备份）
+_system/credentials/
+_system/config/openclaw.json
+_system/sessions/
+_system/memory-main.sqlite
+_system/feishu/

@@ -1,0 +1,225 @@
+{
+  "version": 1,
+  "jobs": [
+    {
+      "id": "02f1de39-6389-4b10-ac92-5b4b7dbdd972",
+      "name": "喝水走走提醒",
+      "enabled": true,
+      "createdAtMs": 1772380267379,
+      "updatedAtMs": 1772420406574,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0,30 10-19 * * *",
+        "tz": "Asia/Shanghai"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "你是一个暖心的提醒助手。请用温暖、有趣的方式提醒群里的囧囧爸爸和囧囧妈妈：该喝水了，也该起来走走活动一下了。要求：(1) 不要回复HEARTBEAT_OK (2) 不要解释你是谁 (3) 直接输出一条暖心的提醒消息 (4) 每次换不同的花样和说法，别重复 (5) 控制在2-3句话以内 (6) 用emoji点缀 (7) 可以偶尔加点幽默"
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "feishu",
+        "to": "chat:oc_734893e3844ad5b51156a02fd7fb5da9"
+      },
+      "state": {
+        "nextRunAtMs": 1772422200000,
+        "lastRunAtMs": 1772420400016,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 6558,
+        "lastDelivered": true,
+        "lastDeliveryStatus": "delivered",
+        "consecutiveErrors": 0
+      }
+    },
+    {
+      "id": "d205a280-beee-41f4-98bf-ee9212448ea8",
+      "name": "喝水走走提醒(晚8点)",
+      "enabled": true,
+      "createdAtMs": 1772380277994,
+      "updatedAtMs": 1772380277994,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 20 * * *",
+        "tz": "Asia/Shanghai"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "你是一个暖心的提醒助手。请用温暖、有趣的方式提醒群里的囧囧爸爸和囧囧妈妈：今天最后一次提醒——喝口水，活动活动筋骨。要求：(1) 不要回复HEARTBEAT_OK (2) 不要解释你是谁 (3) 直接输出一条暖心的收工提醒 (4) 控制在2-3句话以内 (5) 用emoji点缀"
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "feishu",
+        "to": "chat:oc_734893e3844ad5b51156a02fd7fb5da9"
+      },
+      "state": {
+        "nextRunAtMs": 1772452800000
+      }
+    },
+    {
+      "id": "3d5c6da3-5528-49d7-a97e-b6027f23f796",
+      "name": "健身提醒",
+      "enabled": true,
+      "createdAtMs": 1772380329114,
+      "updatedAtMs": 1772416821046,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 10 * * *",
+        "tz": "Asia/Shanghai"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "你是一个暖心的提醒助手。请用温暖、有趣的方式提醒群里的囧囧爸爸和囧囧妈妈：该健身了！要求：(1) 不要回复HEARTBEAT_OK (2) 不要解释你是谁 (3) 直接输出一条暖心的健身提醒消息 (4) 可以加一句简短的鸡汤或关怀的话 (5) 控制在2-3句话以内 (6) 用emoji点缀"
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "feishu",
+        "to": "chat:oc_734893e3844ad5b51156a02fd7fb5da9"
+      },
+      "state": {
+        "nextRunAtMs": 1772503200000,
+        "lastRunAtMs": 1772416811932,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 9114,
+        "lastDelivered": true,
+        "lastDeliveryStatus": "delivered",
+        "consecutiveErrors": 0
+      }
+    },
+    {
+      "id": "5f7bf0a5-1f4a-4694-8045-59e1815e5288",
+      "name": "AI每日早报",
+      "enabled": true,
+      "createdAtMs": 1772381644512,
+      "updatedAtMs": 1772417229835,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 10 * * *",
+        "tz": "Asia/Shanghai"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "你是一个 AI 行业早报助手。请执行以下步骤：\n\n1. 先读取 /root/.openclaw/workspace/memory/ai-daily-config.md 了解配置和信息源列表\n\n2. 用 web_fetch 抓取以下信息源的最新内容（过去24小时）：\n   - HF Daily Papers: https://huggingface.co/api/daily_papers\n   - HN AI热帖: https://hnrss.org/newest?q=LLM+OR+transformer+OR+GPT+OR+AI+agent+OR+language+model&points=50\n   - r/LocalLLaMA: https://www.reddit.com/r/LocalLLaMA/hot.json?limit=10\n   - r/MachineLearning: https://www.reddit.com/r/MachineLearning/hot.json?limit=10\n   - Import AI: https://importai.substack.com/feed\n   - Ahead of AI: https://magazine.sebastianraschka.com/feed\n   - Simon Willison: https://simonwillison.net/atom/everything/\n   \n3. 从所有内容中筛选出 5-8 条最有价值的，按重要性排序\n\n4. 输出格式（中文，简洁）：\n   📰 AI 早报 | YYYY-MM-DD\n   \n   1. **标题（中文）**\n   一句话摘要\n   🔗 链接\n   \n   2. ...\n\n规则：\n- 不要回复 HEARTBEAT_OK\n- 总共 5-8 条，不超过 10 条\n- 每条摘要一句话，不超过 30 字\n- 去重，同一话题只留最好的一条\n- 跳过招聘、广告、灌水内容\n- 标题翻译成中文，摘要也用中文\n- 如果某个源抓取失败就跳过，不要报错"
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "feishu",
+        "to": "chat:oc_734893e3844ad5b51156a02fd7fb5da9"
+      },
+      "state": {
+        "nextRunAtMs": 1772503200000,
+        "lastRunAtMs": 1772416821046,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 47822,
+        "lastDelivered": true,
+        "lastDeliveryStatus": "delivered",
+        "consecutiveErrors": 0
+      }
+    },
+    {
+      "id": "67e4d509-2d55-421b-a78a-41a4c547b355",
+      "name": "任务仪表盘推送",
+      "enabled": true,
+      "createdAtMs": 1772382971143,
+      "updatedAtMs": 1772418647249,
+      "schedule": {
+        "kind": "cron",
+        "expr": "30 10 * * *",
+        "tz": "Asia/Shanghai"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "你是一个任务看板助手。请执行以下步骤：\n\n1. 用 feishu_bitable_list_records 读取多维表格（app_token: K1SAbMZesaTb5Ps7XUucfbmTn9c, table_id: tblQp0EmXsbxIVX8）的所有记录\n2. 按状态分组统计：进行中、待办、已完成\n3. 获取飞书 app 凭证（从 ~/.openclaw/openclaw.json 的 channels.feishu 中读取 appId 和 appSecret）\n4. 用 curl 调用飞书 API 发送一个交互式卡片消息到群 oc_734893e3844ad5b51156a02fd7fb5da9，格式如下：\n   - 标题：📊 zclaw 任务仪表盘\n   - 左列：🔄 进行中的任务列表（每个任务名 + 负责人）\n   - 右列：⏳ 待办的任务列表（每个任务名 + 负责人）\n   - 下方：✅ 已完成数量和最近完成的任务\n   - 底部注释：更新时间\n5. 不要回复 HEARTBEAT_OK\n6. 发送完卡片后，输出\"仪表盘已推送\"即可"
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "feishu",
+        "to": "chat:oc_734893e3844ad5b51156a02fd7fb5da9"
+      },
+      "state": {
+        "nextRunAtMs": 1772505000000,
+        "lastRunAtMs": 1772418611961,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 35288,
+        "lastDelivered": true,
+        "lastDeliveryStatus": "delivered",
+        "consecutiveErrors": 0
+      }
+    },
+    {
+      "id": "a53f47bc-7e0c-40ff-ac63-2a7a298652bb",
+      "sessionKey": "agent:main:feishu:group:oc_b35138984cc18c6c1c764d42973318a1",
+      "name": "quant-progress-report",
+      "enabled": true,
+      "createdAtMs": 1772416418322,
+      "updatedAtMs": 1772417236051,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 10,12,14,16,18,20,22 * * *",
+        "tz": "Asia/Shanghai",
+        "staggerMs": 0
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "定时进度汇报：检查 QuantTrading 项目当前状态，包括：1) sub-agent 运行情况 2) 代码编译和测试状态 3) 最新完成了什么 4) 正在做什么 5) 下一步计划。用飞书 message 工具发送简洁的进度汇报到群里（channel=feishu, target=chat:oc_b35138984cc18c6c1c764d42973318a1）。",
+        "timeoutSeconds": 120
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "feishu",
+        "to": "chat:oc_b35138984cc18c6c1c764d42973318a1"
+      },
+      "state": {
+        "nextRunAtMs": 1772424000000,
+        "lastRunAtMs": 1772416868868,
+        "lastRunStatus": "error",
+        "lastStatus": "error",
+        "lastDurationMs": 120001,
+        "lastError": "cron: job execution timed out",
+        "lastDeliveryStatus": "unknown",
+        "consecutiveErrors": 1
+      }
+    },
+    {
+      "id": "b703639b-401f-4d71-8063-f5aa8010e3a4",
+      "name": "zclaw工作区每日备份",
+      "enabled": true,
+      "createdAtMs": 1772417307851,
+      "updatedAtMs": 1772417307851,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 23 * * *",
+        "tz": "Asia/Shanghai"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "请执行以下 git 备份操作：\n1. cd /root/.openclaw/workspace\n2. git add -A\n3. 检查 git status，如果有变更就 commit（commit message 用中文简述当天变更）\n4. git push origin master\n5. 输出备份结果摘要（几个文件变更、推送是否成功）\n不要回复 HEARTBEAT_OK"
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "feishu",
+        "to": "chat:oc_734893e3844ad5b51156a02fd7fb5da9"
+      },
+      "state": {
+        "nextRunAtMs": 1772463600000
+      }
+    }
+  ]
+}

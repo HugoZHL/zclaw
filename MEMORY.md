@@ -23,6 +23,20 @@
 - 耗时任务用 sub-agent 异步执行，主线程保持空闲实时响应
 - 任务状态同时更新 TODO.md 和飞书多维表格
 - 用户喜欢交互式卡片消息展示任务仪表盘
+- **代码原则：如无必要勿增实体（奥卡姆剃刀）**
+- **定时汇报：每天10:00-22:00每两小时一次（cron id: a53f47bc）**
+
+## QuantTrading 项目
+- GitHub: https://github.com/HugoZHL/QuantTrading
+- 本地: /tmp/QuantTrading
+- 技术栈: Rust 核心 + Python 研究层
+- 架构: 6 crate（qt-common, qt-data, qt-engine, qt-indicators, qt-cta, qt-factor）
+- 状态: 142 tests passing, 0 warnings
+- 策略优先级: CTA期货 > A股多因子 > AI情绪 > 市场中性 > 期权波动率
+- 下一步: Broker trait → 真实数据回测 → CTP模拟盘
+- Git: user "QuantTrading Bot", PAT token 已配置
+- DEV_PROCESS.md: Plan→Implement→Double Review→Iterate→Ship
+- 飞书讨论群: oc_b35138984cc18c6c1c764d42973318a1
 
 ## 技术笔记
 - 飞书图片可通过 im/v1/messages/{msg_id}/resources/{image_key}?type=image API 下载（需 tenant_access_token）
