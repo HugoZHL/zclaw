@@ -226,7 +226,8 @@
         "to": "chat:oc_734893e3844ad5b51156a02fd7fb5da9"
       },
       "state": {
-        "nextRunAtMs": 1772463600000
+        "nextRunAtMs": 1772463600000,
+        "runningAtMs": 1772463600017
       }
     },
     {
