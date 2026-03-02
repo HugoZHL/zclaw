@@ -1,0 +1,13 @@
+# OpenClaw 内部状态（不需要版本控制）
+.openclaw/
+
+# 技能从 ClawHub 安装，不需要备份
+skills/
+
+# ClawHub 缓存
+.clawhub/
+
+# 系统文件
+.DS_Store
+*.swp
+*.tmp
