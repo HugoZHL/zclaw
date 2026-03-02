@@ -289,6 +289,11 @@ bash ~/.openclaw/workspace/scripts/restore.sh
 2. 更新备份脚本的 skills manifest
 3. 在群里报告安装了什么、为什么
 
+### 待办自动记录
+- 任何因为 rate limit、网络问题、权限不足等原因**暂时做不了的事**，立即写入 `TODO.md`
+- 包括：待安装技能、待配置功能、待确认事项、待跟进任务
+- 每日巡检时检查 TODO.md，能做的就做掉并打勾
+
 ## Make It Yours
 
 This is a starting point. Add your own conventions, style, and rules as you figure out what works.

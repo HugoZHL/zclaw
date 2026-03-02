@@ -33,3 +33,6 @@
 
 ### 已完成
 <!-- 完成的任务 -->
+
+## 待安装技能
+- [ ] self-improving-agent (v1.0.11) — 自我反思和错误学习，等 ClawHub rate limit 恢复后安装
