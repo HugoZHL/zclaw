@@ -3,10 +3,10 @@
   "jobs": [
     {
       "id": "02f1de39-6389-4b10-ac92-5b4b7dbdd972",
-      "name": "喝水走走提醒",
+      "name": "健康提醒(喝水+活动+护眼)",
       "enabled": true,
       "createdAtMs": 1772380267379,
-      "updatedAtMs": 1772420406574,
+      "updatedAtMs": 1772451024664,
       "schedule": {
         "kind": "cron",
         "expr": "0,30 10-19 * * *",
@@ -16,7 +16,7 @@
       "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
-        "message": "你是一个暖心的提醒助手。请用温暖、有趣的方式提醒群里的囧囧爸爸和囧囧妈妈：该喝水了，也该起来走走活动一下了。要求：(1) 不要回复HEARTBEAT_OK (2) 不要解释你是谁 (3) 直接输出一条暖心的提醒消息 (4) 每次换不同的花样和说法，别重复 (5) 控制在2-3句话以内 (6) 用emoji点缀 (7) 可以偶尔加点幽默"
+        "message": "你是一个健康提醒助手，用囧囧（家里小朋友）的可爱口吻提醒囧囧爸爸和囧囧妈妈。根据当前北京时间，发出一条简短的健康提醒（60字以内）。\n\n每次提醒必须同时包含这三件事（缺一不可）：\n1. 💧 喝水 — 端起水杯喝一杯\n2. 🚶 活动 — 站起来走走、伸展、活动筋骨\n3. 👀 护眼 — 看看远处、闭眼休息、做做眼保健操\n\n语气要求：\n- 可爱但不啰嗦\n- 根据时间段调整语气（上午精神、午后犯困、傍晚加油等）\n- 每次说法不一样，有创意，但三个要素都要提到\n- 注意：只有最后一条提醒（晚上8点）才说\"收工\"，其他时间不要说收工、下班之类的话\n- 不要回复 HEARTBEAT_OK"
       },
       "delivery": {
         "mode": "announce",
@@ -24,22 +24,23 @@
         "to": "chat:oc_734893e3844ad5b51156a02fd7fb5da9"
       },
       "state": {
-        "nextRunAtMs": 1772422200000,
-        "lastRunAtMs": 1772420400016,
-        "lastRunStatus": "ok",
-        "lastStatus": "ok",
-        "lastDurationMs": 6558,
+        "nextRunAtMs": 1772503200000,
+        "lastRunAtMs": 1772451000010,
+        "lastRunStatus": "error",
+        "lastStatus": "error",
+        "lastDurationMs": 24654,
         "lastDelivered": true,
         "lastDeliveryStatus": "delivered",
-        "consecutiveErrors": 0
+        "consecutiveErrors": 3,
+        "lastError": "⚠️ ✉️ Message failed"
       }
     },
     {
       "id": "d205a280-beee-41f4-98bf-ee9212448ea8",
-      "name": "喝水走走提醒(晚8点)",
+      "name": "晚间健康提醒",
       "enabled": true,
       "createdAtMs": 1772380277994,
-      "updatedAtMs": 1772380277994,
+      "updatedAtMs": 1772452819226,
       "schedule": {
         "kind": "cron",
         "expr": "0 20 * * *",
@@ -49,7 +50,7 @@
       "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
-        "message": "你是一个暖心的提醒助手。请用温暖、有趣的方式提醒群里的囧囧爸爸和囧囧妈妈：今天最后一次提醒——喝口水，活动活动筋骨。要求：(1) 不要回复HEARTBEAT_OK (2) 不要解释你是谁 (3) 直接输出一条暖心的收工提醒 (4) 控制在2-3句话以内 (5) 用emoji点缀"
+        "message": "你是一个健康提醒助手，用囧囧（家里小朋友）的可爱口吻提醒囧囧爸爸和囧囧妈妈。现在是晚上8点，这是今天最后一条健康提醒，意味着收工啦！\n\n内容要包含：\n1. 💧 喝杯水\n2. 🚶 站起来活动一下\n3. 👀 让眼睛休息一下\n4. 🎉 收工！辛苦一天了，好好休息\n\n语气温馨可爱，带点庆祝收工的感觉。不要回复 HEARTBEAT_OK"
       },
       "delivery": {
         "mode": "announce",
@@ -57,7 +58,14 @@
         "to": "chat:oc_734893e3844ad5b51156a02fd7fb5da9"
       },
       "state": {
-        "nextRunAtMs": 1772452800000
+        "nextRunAtMs": 1772539200000,
+        "lastRunAtMs": 1772452800013,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 19213,
+        "lastDelivered": true,
+        "lastDeliveryStatus": "delivered",
+        "consecutiveErrors": 0
       }
     },
     {
@@ -165,7 +173,7 @@
       "name": "quant-progress-report",
       "enabled": true,
       "createdAtMs": 1772416418322,
-      "updatedAtMs": 1772417236051,
+      "updatedAtMs": 1772460120046,
       "schedule": {
         "kind": "cron",
         "expr": "0 10,12,14,16,18,20,22 * * *",
@@ -176,7 +184,7 @@
       "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
-        "message": "定时进度汇报：检查 QuantTrading 项目当前状态，包括：1) sub-agent 运行情况 2) 代码编译和测试状态 3) 最新完成了什么 4) 正在做什么 5) 下一步计划。用飞书 message 工具发送简洁的进度汇报到群里（channel=feishu, target=chat:oc_b35138984cc18c6c1c764d42973318a1）。",
+        "message": "定时进度汇报：检查 QuantTrading 项目当前状态并发送简洁汇报到飞书群（channel=feishu, target=chat:oc_b35138984cc18c6c1c764d42973318a1）。内容包括：1) 编译和测试状态 2) 最新完成了什么 3) 正在做什么 4) 下一步自动推进计划。注意：不要说'等待指令'，团队原则是持续自驱推进，不设时间上限。",
         "timeoutSeconds": 120
       },
       "delivery": {
@@ -185,14 +193,14 @@
         "to": "chat:oc_b35138984cc18c6c1c764d42973318a1"
       },
       "state": {
-        "nextRunAtMs": 1772424000000,
-        "lastRunAtMs": 1772416868868,
+        "nextRunAtMs": 1772503200000,
+        "lastRunAtMs": 1772460000006,
         "lastRunStatus": "error",
         "lastStatus": "error",
-        "lastDurationMs": 120001,
-        "lastError": "cron: job execution timed out",
+        "lastDurationMs": 120040,
         "lastDeliveryStatus": "unknown",
-        "consecutiveErrors": 1
+        "consecutiveErrors": 1,
+        "lastError": "cron: job execution timed out"
       }
     },
     {
@@ -200,7 +208,7 @@
       "name": "zclaw工作区每日备份",
       "enabled": true,
       "createdAtMs": 1772417307851,
-      "updatedAtMs": 1772417307851,
+      "updatedAtMs": 1772420450530,
       "schedule": {
         "kind": "cron",
         "expr": "0 23 * * *",
@@ -210,7 +218,7 @@
       "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
-        "message": "请执行以下 git 备份操作：\n1. cd /root/.openclaw/workspace\n2. git add -A\n3. 检查 git status，如果有变更就 commit（commit message 用中文简述当天变更）\n4. git push origin master\n5. 输出备份结果摘要（几个文件变更、推送是否成功）\n不要回复 HEARTBEAT_OK"
+        "message": "请执行完整备份脚本：bash /root/.openclaw/workspace/scripts/backup.sh，然后输出备份结果摘要。不要回复 HEARTBEAT_OK"
       },
       "delivery": {
         "mode": "announce",
@@ -219,6 +227,40 @@
       },
       "state": {
         "nextRunAtMs": 1772463600000
+      }
+    },
+    {
+      "id": "7aac9143-0d89-4717-b3c7-d5528d639648",
+      "name": "zclaw自我巡检(每2小时)",
+      "enabled": true,
+      "createdAtMs": 1772427525697,
+      "updatedAtMs": 1772460192528,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 */2 * * *",
+        "staggerMs": 300000
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "你是 zclaw 的自我巡检模块。请执行以下任务：\n\n## 1. 检查 TODO.md\n读取 /root/.openclaw/workspace/TODO.md，执行所有能做的待办事项，完成的打勾。\n\n## 2. 检查已安装技能更新\n运行 `clawhub update --all --no-input` 更新所有已安装技能。如果 rate limit 就跳过。\n\n## 3. 发现新技能\n搜索 ClawHub（每次轮换 2-3 个关键词），评估是否值得安装。\n关键词轮换池：automation, productivity, finance, trading, monitoring, scraping, email, calendar, analytics, security, api, social-media, seo, database, notification, ai-agent, workflow, deploy, crypto, data-analysis\n\n安装风险分级：\n- 🟢 低风险（信息查询类）→ 直接装\n- 🟡 中风险（外部 API 类）→ 装并记录\n- 🔴 高风险（支付/账号/安全）→ 不装，记到 TODO.md 待确认\n\n## 4. 汇报规则\n检查当前北京时间（UTC+8）：\n- 如果是 8:00-22:00（白天）→ 正常输出巡检报告\n- 如果是 22:00-8:00（夜间）→ 只执行不汇报，输出一行：\"夜间巡检完成，无需汇报。\"\n\n白天汇报格式：\n🔍 zclaw 自我巡检报告\n\n**TODO 处理：** [完成了什么 / 无待办]\n**技能更新：** [更新了什么 / 全部最新]\n**新发现：** [安装了什么 / 待确认什么 / 无新发现]\n\n如果白天什么都没变化，也简短说一句\"一切正常\"即可。\n不要回复 HEARTBEAT_OK",
+        "timeoutSeconds": 300
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "feishu",
+        "to": "chat:oc_734893e3844ad5b51156a02fd7fb5da9"
+      },
+      "state": {
+        "nextRunAtMs": 1772467333150,
+        "lastRunAtMs": 1772460133162,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 59366,
+        "lastDeliveryStatus": "delivered",
+        "consecutiveErrors": 0,
+        "lastDelivered": true
       }
     }
   ]

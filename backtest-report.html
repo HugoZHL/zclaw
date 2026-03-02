@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>CTA 回测报告</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { 
+    background: #0f1724; 
+    font-family: 'Segoe UI', -apple-system, sans-serif;
+    color: #e0e6ed;
+    padding: 30px;
+    width: 900px;
+  }
+  h1 { text-align: center; font-size: 24px; margin-bottom: 6px; }
+  .subtitle { text-align: center; font-size: 13px; color: #6b7d9a; margin-bottom: 24px; }
+  
+  .section { margin-bottom: 24px; }
+  .section-title { 
+    font-size: 16px; font-weight: 700; margin-bottom: 12px;
+    padding-left: 10px;
+    border-left: 3px solid #00d4ff;
+  }
+  
+  table { 
+    width: 100%; border-collapse: collapse; 
+    background: rgba(255,255,255,0.03);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  th { 
+    background: rgba(255,255,255,0.08); 
+    padding: 10px 12px; 
+    text-align: left; 
+    font-size: 12px; 
+    color: #8a9bb5;
+    font-weight: 600;
+  }
+  td { 
+    padding: 8px 12px; 
+    font-size: 13px; 
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+  }
+  tr:hover { background: rgba(255,255,255,0.04); }
+  
+  /* 中国配色：红涨绿跌 */
+  .positive { color: #ff4444; font-weight: 600; }
+  .negative { color: #00cc66; font-weight: 600; }
+  .neutral { color: #ffaa00; }
+  .best { background: rgba(255,68,68,0.08); }
+  .badge {
+    display: inline-block; padding: 2px 8px; border-radius: 10px;
+    font-size: 10px; font-weight: 700;
+  }
+  .badge-gold { background: rgba(255,200,0,0.2); color: #ffc800; }
+  .badge-silver { background: rgba(192,192,192,0.2); color: #c0c0c0; }
+  .badge-bronze { background: rgba(205,127,50,0.2); color: #cd7f32; }
+  
+  .insight-box {
+    background: rgba(0,212,255,0.08);
+    border: 1px solid rgba(0,212,255,0.2);
+    border-radius: 8px;
+    padding: 14px 16px;
+    margin-top: 12px;
+    font-size: 12px;
+    line-height: 1.8;
+  }
+  .insight-box strong { color: #00d4ff; }
+  
+  .grid { display: flex; gap: 12px; margin-bottom: 12px; }
+  .card {
+    flex: 1;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 10px;
+    padding: 14px;
+    text-align: center;
+  }
+  .card-value { font-size: 22px; font-weight: 700; }
+  .card-label { font-size: 11px; color: #6b7d9a; margin-top: 4px; }
+</style>
+</head>
+<body>
+
+<h1>📊 CTA 策略真实期货数据回测报告</h1>
+<div class="subtitle">8个品种 × 4个策略 = 32组回测 | 数据来源: akshare 真实日线 | 初始资金: ¥1,000,000</div>
+
+<div class="grid">
+  <div class="card">
+    <div class="card-value" style="color:#00d4ff;">8</div>
+    <div class="card-label">期货品种</div>
+  </div>
+  <div class="card">
+    <div class="card-value" style="color:#7b2ffc;">4</div>
+    <div class="card-label">CTA 策略</div>
+  </div>
+  <div class="card">
+    <div class="card-value" style="color:#00ff88;">32</div>
+    <div class="card-label">回测组合</div>
+  </div>
+  <div class="card">
+    <div class="card-value" style="color:#ffaa00;">480</div>
+    <div class="card-label">参数扫描</div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-title">策略综合表现（所有品种平均）</div>
+  <table>
+    <tr>
+      <th>策略</th><th>参数</th><th>平均收益</th><th>夏普比</th><th>最大回撤</th><th>胜率</th><th>交易笔数</th><th>评价</th>
+    </tr>
+    <tr class="best">
+      <td>🥇 DualMA</td><td>快线10 / 慢线30</td>
+      <td class="positive">+11.75%</td><td>0.245</td><td class="neutral">24.04%</td><td>39.9%</td><td>1,185</td>
+      <td><span class="badge badge-gold">最稳健</span></td>
+    </tr>
+    <tr>
+      <td>🥈 Donchian</td><td>上轨20 / 下轨10</td>
+      <td class="positive">+3.33%</td><td>0.049</td><td class="positive">4.68%</td><td>39.2%</td><td>1,277</td>
+      <td><span class="badge badge-silver">回撤最小</span></td>
+    </tr>
+    <tr>
+      <td>🥉 Momentum</td><td>ROC+RSI 综合</td>
+      <td class="negative">-11.07%</td><td>0.104</td><td class="negative">64.43%</td><td>35.1%</td><td>109</td>
+      <td><span class="badge badge-bronze">波动大</span></td>
+    </tr>
+    <tr>
+      <td>4️⃣ Bollinger</td><td>20日 / 2σ</td>
+      <td class="negative">-18.59%</td><td>0.030</td><td class="negative">58.27%</td><td>26.9%</td><td>34</td>
+      <td style="color:#ff4444;">交易过少</td>
+    </tr>
+  </table>
+</div>
+
+<div class="section">
+  <div class="section-title">🏆 Top 10 品种-策略组合</div>
+  <table>
+    <tr><th>#</th><th>品种</th><th>策略</th><th>总收益</th><th>年化</th><th>夏普</th><th>回撤</th></tr>
+    <tr class="best"><td>1</td><td>🟤 沪铜 CU</td><td>Bollinger</td><td class="positive">+48.81%</td><td>+1.97%</td><td>0.391</td><td>25.09%</td></tr>
+    <tr class="best"><td>2</td><td>🟤 沪铜 CU</td><td>Momentum</td><td class="positive">+42.46%</td><td>+1.75%</td><td>0.382</td><td>28.39%</td></tr>
+    <tr><td>3</td><td>⚫ 焦炭 J</td><td>DualMA</td><td class="positive">+33.61%</td><td>+2.04%</td><td>0.274</td><td>27.82%</td></tr>
+    <tr><td>4</td><td>🔴 螺纹钢 RB</td><td>DualMA</td><td class="positive">+22.26%</td><td>+1.24%</td><td>0.368</td><td>25.67%</td></tr>
+    <tr><td>5</td><td>🟤 沪铜 CU</td><td>Donchian</td><td class="positive">+20.89%</td><td>+0.93%</td><td>0.391</td><td>25.09%</td></tr>
+    <tr><td>6</td><td>🟡 棕榈油 P</td><td>DualMA</td><td class="positive">+18.42%</td><td>+1.05%</td><td>0.381</td><td>25.48%</td></tr>
+    <tr><td>7</td><td>⚫ 焦炭 J</td><td>Momentum</td><td class="positive">+17.00%</td><td>+1.03%</td><td>0.367</td><td>27.82%</td></tr>
+    <tr><td>8</td><td>🔵 沪铝 AL</td><td>DualMA</td><td class="positive">+14.93%</td><td>+0.62%</td><td>0.378</td><td>23.65%</td></tr>
+    <tr><td>9</td><td>🔴 铁矿石 I</td><td>DualMA</td><td class="positive">+11.36%</td><td>+0.63%</td><td>0.382</td><td>28.39%</td></tr>
+    <tr><td>10</td><td>🟤 沪铜 CU</td><td>DualMA</td><td class="positive">+9.67%</td><td>+0.41%</td><td>0.391</td><td>25.09%</td></tr>
+  </table>
+</div>
+
+<div class="section">
+  <div class="section-title">📈 参数优化结果（DualMA 网格搜索 480组）</div>
+  <table>
+    <tr><th>品种</th><th>最优快线</th><th>最优慢线</th><th>ATR止损</th><th>收益</th><th>夏普</th><th>WF测试集</th><th>过拟合？</th></tr>
+    <tr><td>RB 螺纹钢</td><td>5</td><td>20</td><td>×3.0</td><td class="positive">+19.61%</td><td>0.368</td><td class="positive">+5.40%</td><td>✅ 安全</td></tr>
+    <tr><td>CU 沪铜</td><td>5</td><td>20</td><td>×3.0</td><td class="positive">+19.96%</td><td>0.391</td><td class="positive">+7.51%</td><td>✅ 安全</td></tr>
+    <tr><td>J 焦炭</td><td>5</td><td>20</td><td>×3.0</td><td class="positive">+25.96%</td><td>0.367</td><td class="positive">+0.36%</td><td>✅ 安全</td></tr>
+    <tr class="best"><td>AL 沪铝</td><td>15</td><td>20</td><td>×3.0</td><td class="positive">+14.93%</td><td>0.378</td><td class="positive">+11.59%</td><td>⭐ 最稳</td></tr>
+    <tr><td>P 棕榈油</td><td>5</td><td>20</td><td>×3.0</td><td class="positive">+21.07%</td><td>0.381</td><td class="positive">+10.32%</td><td>✅ 安全</td></tr>
+    <tr><td>I 铁矿石</td><td>5</td><td>20</td><td>×3.0</td><td class="positive">+11.36%</td><td>0.382</td><td class="positive">+7.70%</td><td>✅ 安全</td></tr>
+    <tr><td>M 豆粕</td><td>5</td><td>20</td><td>×3.0</td><td class="negative">-6.74%</td><td>0.361</td><td class="negative">-13.05%</td><td>⚠️ 不适</td></tr>
+    <tr><td>SC 原油</td><td>5</td><td>20</td><td>×3.0</td><td class="negative">-7.28%</td><td>0.376</td><td class="negative">-9.21%</td><td>🔴 过拟合</td></tr>
+  </table>
+</div>
+
+<div class="section">
+  <div class="section-title">🎯 多品种组合优化</div>
+  <table>
+    <tr><th>组合方式</th><th>总收益</th><th>夏普比</th><th>最大回撤</th><th>说明</th></tr>
+    <tr class="best"><td>等权组合（推荐）</td><td class="positive">+496.74%</td><td class="positive">0.944</td><td class="neutral">17.89%</td><td>最简单，效果一样好</td></tr>
+    <tr><td>风险平价</td><td class="positive">+494.35%</td><td class="positive">0.943</td><td class="neutral">17.90%</td><td>波动率倒数加权</td></tr>
+    <tr><td>夏普加权</td><td class="positive">+498.15%</td><td class="positive">0.944</td><td class="neutral">17.89%</td><td>按夏普比加权</td></tr>
+  </table>
+  
+  <div class="insight-box">
+    <strong>💡 关键发现：</strong><br>
+    • 品种间相关性极低（&lt;0.1），分散化效果极佳<br>
+    • 单品种夏普 ~0.37 → 组合夏普 <strong>0.94</strong>（提升 2.5 倍）<br>
+    • 单品种回撤 ~25% → 组合回撤 <strong>17.9%</strong>（降低 30%）<br>
+    • 三种组合方案绩效几乎一致，推荐最简单的<strong>等权配置</strong>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-title">💡 实盘建议</div>
+  <div class="insight-box">
+    <strong>1. 参数选择：</strong>MA(10/30) ATR×2.0 作为稳健基线（非过优化的 5/20×3.0）<br>
+    <strong>2. 品种选择：</strong>优先 CU、AL、RB、P（WF 验证好），降低 SC 权重，去掉 M<br>
+    <strong>3. 组合方式：</strong>等权配置，月度再平衡<br>
+    <strong>4. 风控：</strong>组合回撤 &gt;20% 减仓至半仓<br>
+    <strong>5. 起步：</strong>先最小手数（每品种1手），运行1个月验证后逐步加仓<br>
+    <br>
+    <strong>⚠️ 注意：</strong>当前回测未计入合约乘数和保证金，收益率为名义价格变动。正在添加合约乘数计算，修正后会重新跑一遍。
+  </div>
+</div>
+
+<div style="text-align:center; margin-top:20px; font-size:11px; color:#3a4d66;">
+  QuantTrading CTA回测报告 | 2026-03-02 | github.com/HugoZHL/QuantTrading
+</div>
+
+</body>
+</html>

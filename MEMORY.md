@@ -4,7 +4,13 @@
 - zhl 希望我每次对话都先读 SOUL.md
 - zhl 希望我主动把重要信息记录到 memory 里，不用每次问
 - 通过飞书联系，时区 UTC+8
+- **展示 TODO 时附上相关文档链接**（2026-03-02 确认）
 - **读 paper/blog 总结模板**（2026-03-02 确认）：
+  1. 核心内容总结
+  2. 代码修改位置、改动量分析（改哪一层？Python/CUDA/通信？多少行？）
+  3. 各个技术/trick 的单独贡献分析（有 ablation 就引用数据）
+  4. 与当前最强 baseline 的对比分析（不只是论文选的 baseline，要判断是否缺少关键对比）
+- **总结原则：完全理解、完全掌握 > 精简**。首要目标是让他读完后能彻底搞懂并掌握内容（该解释的概念要解释清楚，该给的上下文要给足），在此基础上尽量精简，不说废话
   1. 核心内容总结
   2. 代码修改位置、改动量分析（改哪一层？Python/CUDA/通信？多少行？）
   3. 各个技术/trick 的单独贡献分析（有 ablation 就引用数据）
@@ -14,8 +20,13 @@
 ## 账号信息
 - GitHub 账号：HugoZHL
 
+## 群聊分工
+- **oc_734893e3844ad5b51156a02fd7fb5da9**：日常管理群，不发学术内容
+- 学术讨论内容只发学术讨论群
+
 ## 重要事件
 - 2026-03-01: 第一次对话，完成初始身份确认和工作流程说明
+- 2026-03-02: 完成 git 备份体系（github.com/HugoZHL/zclaw）、迁移脚本、自我巡检机制、健康提醒优化
 - 2026-03-01: 配置 GitHub CLI，账号 HugoZHL
 - 2026-03-01: 建立飞书群协作体系（群 chat_id: oc_734893e3844ad5b51156a02fd7fb5da9）
   - 成员：张海林(囧囧爸爸, ou_317c...) + 囧囧妈妈(ou_3f22...)
@@ -42,6 +53,9 @@
 - Git: user "QuantTrading Bot", PAT token 已配置
 - DEV_PROCESS.md: Plan→Implement→Double Review→Iterate→Ship
 - 飞书讨论群: oc_b35138984cc18c6c1c764d42973318a1
+
+## 实验结论
+- SGD 替换 AdamW 做 RL post-training：**已验证不行**（2026-03-02），大规模场景下不 work，从待办中移除
 
 ## 技术笔记
 - 飞书图片可通过 im/v1/messages/{msg_id}/resources/{image_key}?type=image API 下载（需 tenant_access_token）
