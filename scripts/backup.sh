@@ -55,9 +55,15 @@ if [ -f "$OPENCLAW_DIR/memory/main.sqlite" ]; then
   cp "$OPENCLAW_DIR/memory/main.sqlite" "$BACKUP_DIR/memory-main.sqlite"
 fi
 
-# 9. 会话历史
-echo "💬 备份会话历史..."
-cp -r "$OPENCLAW_DIR/agents/" "$BACKUP_DIR/sessions/" 2>/dev/null || true
+# 9. 会话历史（只保留最近 7 天，减少存储）
+echo "💬 备份会话历史（近7天）..."
+mkdir -p "$BACKUP_DIR/sessions/agents/main/sessions"
+# 复制 sessions.json 索引
+cp "$OPENCLAW_DIR/agents/main/sessions/sessions.json" "$BACKUP_DIR/sessions/agents/main/sessions/" 2>/dev/null || true
+# 复制 agent 配置
+cp -r "$OPENCLAW_DIR/agents/main/agent/" "$BACKUP_DIR/sessions/agents/main/agent/" 2>/dev/null || true
+# 只复制最近 7 天修改的会话文件
+find "$OPENCLAW_DIR/agents/main/sessions/" -name "*.jsonl" -mtime -7 -exec cp {} "$BACKUP_DIR/sessions/agents/main/sessions/" \; 2>/dev/null || true
 
 # 10. 已安装技能列表（只记录列表，不备份代码）
 echo "🛠️ 记录已安装技能..."
@@ -113,6 +119,14 @@ if [ -n "$SENSITIVE_DIRS" ]; then
   cd "$WORKSPACE"
 fi
 
+# 13. 清理旧的备份临时文件（保持最小存储）
+echo "🧹 清理临时文件..."
+rm -rf "$BACKUP_DIR/credentials" "$BACKUP_DIR/config" "$BACKUP_DIR/sessions" "$BACKUP_DIR/memory-main.sqlite" "$BACKUP_DIR/feishu" 2>/dev/null || true
+
+# 14. 清理超过 30 天的 memory 日记（已被 MEMORY.md 提炼）
+echo "📅 清理旧日记..."
+find "$WORKSPACE/memory/" -name "20??-??-??.md" -mtime +30 -exec rm {} \; 2>/dev/null || true
+
 # Git 提交（只推非敏感文件 + 加密包）
 cd "$WORKSPACE"
 git add -A
@@ -122,6 +136,20 @@ else
   git commit -m "🔄 自动备份 $(date '+%Y-%m-%d %H:%M') (北京时间 $(TZ='Asia/Shanghai' date '+%H:%M'))"
   git push origin master
   echo "✅ 备份已推送到 GitHub"
+fi
+
+# 15. 每月 1 号 squash git 历史（保持仓库小）
+DAY=$(TZ='Asia/Shanghai' date '+%d')
+if [ "$DAY" = "01" ]; then
+  echo "📦 月度 squash：压缩 git 历史..."
+  cd "$WORKSPACE"
+  git checkout --orphan temp_branch
+  git add -A
+  git commit -m "🗜️ 月度 squash $(TZ='Asia/Shanghai' date '+%Y-%m')"
+  git branch -D master
+  git branch -m master
+  git push -f origin master
+  echo "  ✅ Git 历史已压缩"
 fi
 
 echo "🐾 备份完成！"

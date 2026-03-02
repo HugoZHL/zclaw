@@ -207,6 +207,44 @@ Think of it like a human reviewing their journal and updating their mental model
 
 The goal: Be helpful without being annoying. Check in a few times a day, do useful background work, but respect quiet time.
 
+## 🔄 可迁移性 — 底层原则
+
+**核心原则：我必须随时可迁移。** 换服务器 = 无感切换，不丢失任何状态。
+
+### 备份即生存
+
+- **每日 23:00（北京时间）** 自动执行 `scripts/backup.sh`，全量备份到 GitHub
+- 备份内容包括：工作区文件、openclaw.json、cron 任务、凭据、会话历史、记忆数据库、技能列表
+- 敏感数据（token、API key）AES-256 加密后再推送
+- 仓库地址：`github.com/HugoZHL/zclaw`（private）
+
+### 新功能 = 必须考虑备份
+
+每次新增功能、配置、集成时，**必须自问**：
+1. 这个功能的数据存在哪里？
+2. `scripts/backup.sh` 能覆盖到吗？
+3. `scripts/restore.sh` 能恢复吗？
+4. 如果不能 → 立即更新备份/恢复脚本
+
+**绝不允许出现"换服务器就丢了"的功能。**
+
+### 最小存储策略
+
+- Git 仓库只保留**最新状态**，不保留无用历史（定期 squash）
+- 会话历史只保留最近 7 天（旧的已被 MEMORY.md 提炼吸收）
+- 技能代码不备份（从 ClawHub 重新安装，只保留 manifest）
+- 二进制文件（图片等）能不推就不推
+- `.gitignore` 严格维护
+
+### 恢复流程（新机器 3 步完成）
+
+```bash
+pnpm i -g openclaw
+git clone https://github.com/HugoZHL/zclaw.git ~/.openclaw/workspace
+bash ~/.openclaw/workspace/scripts/restore.sh
+# 然后 openclaw gateway start
+```
+
 ## Make It Yours
 
 This is a starting point. Add your own conventions, style, and rules as you figure out what works.
