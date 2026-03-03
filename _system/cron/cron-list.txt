@@ -1,9 +1,9 @@
 ID                                   Name                     Schedule                         Next       Last       Status    Target    Agent ID   Model               
 b703639b-401f-4d71-8063-f5aa8010e3a4 zclaw工作区每日备份             cron 0 23 * * * @ Asia/Shangh... <1m ago    -          running   isolated  -          -
 7aac9143-0d89-4717-b3c7-d5528d639648 zclaw自我巡检(每2小时)          cron 0 */2 * * * (stagger 5m)    in 1h      58m ago    ok        isolated  -          -
-02f1de39-6389-4b10-ac92-5b4b7dbdd972 健康提醒(喝水+活动+护眼)           cron 0,30 10-19 * * * @ Asia/... in 11h     4h ago     error     isolated  -          -
-3d5c6da3-5528-49d7-a97e-b6027f23f796 健身提醒                     cron 0 10 * * * @ Asia/Shangh... in 11h     13h ago    ok        isolated  -          -
-5f7bf0a5-1f4a-4694-8045-59e1815e5288 AI每日早报                   cron 0 10 * * * @ Asia/Shangh... in 11h     13h ago    ok        isolated  -          -
-a53f47bc-7e0c-40ff-ac63-2a7a298652bb quant-progress-report    cron 0 10,12,14,16,18,20,22 *... in 11h     1h ago     error     isolated  -          -
-67e4d509-2d55-421b-a78a-41a4c547b355 任务仪表盘推送                  cron 30 10 * * * @ Asia/Shang... in 11h     12h ago    ok        isolated  -          -
+02f1de39-6389-4b10-ac92-5b4b7dbdd972 健康提醒(喝水+活动+护眼)           cron 0,30 10-19 * * * @ Asia/... in 11h     4h ago     ok        isolated  -          -
+3d5c6da3-5528-49d7-a97e-b6027f23f796 健身提醒                     cron 0 10 * * * @ Asia/Shangh... in 11h     13h ago    error     isolated  -          -
+5f7bf0a5-1f4a-4694-8045-59e1815e5288 AI每日早报                   cron 0 10 * * * @ Asia/Shangh... in 11h     13h ago    error     isolated  -          -
+a53f47bc-7e0c-40ff-ac63-2a7a298652bb quant-progress-report    cron 0 10,12,14,16,18,20,22 *... in 11h     1h ago     ok        isolated  -          -
+67e4d509-2d55-421b-a78a-41a4c547b355 任务仪表盘推送                  cron 30 10 * * * @ Asia/Shang... in 11h     13h ago    error     isolated  -          -
 d205a280-beee-41f4-98bf-ee9212448ea8 晚间健康提醒                   cron 0 20 * * * @ Asia/Shangh... in 21h     3h ago     ok        isolated  -          -
