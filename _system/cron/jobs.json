@@ -6,7 +6,7 @@
       "name": "健康提醒(喝水+活动+护眼)",
       "enabled": true,
       "createdAtMs": 1772380267379,
-      "updatedAtMs": 1772537409911,
+      "updatedAtMs": 1772623811385,
       "schedule": {
         "kind": "cron",
         "expr": "0,30 10-19 * * *",
@@ -24,11 +24,11 @@
         "to": "chat:oc_734893e3844ad5b51156a02fd7fb5da9"
       },
       "state": {
-        "nextRunAtMs": 1772589600000,
-        "lastRunAtMs": 1772537400008,
+        "nextRunAtMs": 1772676000000,
+        "lastRunAtMs": 1772623800007,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 9903,
+        "lastDurationMs": 11378,
         "lastDelivered": true,
         "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0
@@ -39,7 +39,7 @@
       "name": "晚间健康提醒",
       "enabled": true,
       "createdAtMs": 1772380277994,
-      "updatedAtMs": 1772539208811,
+      "updatedAtMs": 1772625610719,
       "schedule": {
         "kind": "cron",
         "expr": "0 20 * * *",
@@ -57,11 +57,11 @@
         "to": "chat:oc_734893e3844ad5b51156a02fd7fb5da9"
       },
       "state": {
-        "nextRunAtMs": 1772625600000,
-        "lastRunAtMs": 1772539200009,
+        "nextRunAtMs": 1772712000000,
+        "lastRunAtMs": 1772625600006,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 8802,
+        "lastDurationMs": 10713,
         "lastDelivered": true,
         "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0
@@ -72,7 +72,7 @@
       "name": "健身提醒",
       "enabled": true,
       "createdAtMs": 1772380329114,
-      "updatedAtMs": 1772503202966,
+      "updatedAtMs": 1772589614998,
       "schedule": {
         "kind": "cron",
         "expr": "0 10 * * *",
@@ -90,15 +90,14 @@
         "to": "chat:oc_734893e3844ad5b51156a02fd7fb5da9"
       },
       "state": {
-        "nextRunAtMs": 1772589600000,
-        "lastRunAtMs": 1772503201833,
-        "lastRunStatus": "error",
-        "lastStatus": "error",
-        "lastDurationMs": 1133,
+        "nextRunAtMs": 1772676000000,
+        "lastRunAtMs": 1772589609037,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 5961,
         "lastDelivered": true,
         "lastDeliveryStatus": "delivered",
-        "consecutiveErrors": 1,
-        "lastError": "⚠️ openrouter (anthropic/claude-opus-4.6) returned a billing error — your API key has run out of credits or has an insufficient balance. Check your openrouter billing dashboard and top up or switch to a different API key."
+        "consecutiveErrors": 0
       }
     },
     {
@@ -106,7 +105,7 @@
       "name": "AI每日早报",
       "enabled": true,
       "createdAtMs": 1772381644512,
-      "updatedAtMs": 1772503203918,
+      "updatedAtMs": 1772589648255,
       "schedule": {
         "kind": "cron",
         "expr": "0 10 * * *",
@@ -124,15 +123,14 @@
         "to": "chat:oc_734893e3844ad5b51156a02fd7fb5da9"
       },
       "state": {
-        "nextRunAtMs": 1772589600000,
-        "lastRunAtMs": 1772503202966,
-        "lastRunStatus": "error",
-        "lastStatus": "error",
-        "lastDurationMs": 952,
+        "nextRunAtMs": 1772676000000,
+        "lastRunAtMs": 1772589614998,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 33257,
         "lastDelivered": true,
         "lastDeliveryStatus": "delivered",
-        "consecutiveErrors": 1,
-        "lastError": "⚠️ openrouter (anthropic/claude-opus-4.6) returned a billing error — your API key has run out of credits or has an insufficient balance. Check your openrouter billing dashboard and top up or switch to a different API key."
+        "consecutiveErrors": 0
       }
     },
     {
@@ -140,7 +138,7 @@
       "name": "任务仪表盘推送",
       "enabled": true,
       "createdAtMs": 1772382971143,
-      "updatedAtMs": 1772505003413,
+      "updatedAtMs": 1772591435077,
       "schedule": {
         "kind": "cron",
         "expr": "30 10 * * *",
@@ -158,15 +156,14 @@
         "to": "chat:oc_734893e3844ad5b51156a02fd7fb5da9"
       },
       "state": {
-        "nextRunAtMs": 1772591400000,
-        "lastRunAtMs": 1772505002277,
-        "lastRunStatus": "error",
-        "lastStatus": "error",
-        "lastDurationMs": 1136,
+        "nextRunAtMs": 1772677800000,
+        "lastRunAtMs": 1772591406791,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 28286,
         "lastDelivered": true,
         "lastDeliveryStatus": "delivered",
-        "consecutiveErrors": 1,
-        "lastError": "⚠️ openrouter (anthropic/claude-opus-4.6) returned a billing error — your API key has run out of credits or has an insufficient balance. Check your openrouter billing dashboard and top up or switch to a different API key."
+        "consecutiveErrors": 0
       }
     },
     {
@@ -175,7 +172,7 @@
       "name": "quant-progress-report",
       "enabled": true,
       "createdAtMs": 1772416418322,
-      "updatedAtMs": 1772546467618,
+      "updatedAtMs": 1772632920079,
       "schedule": {
         "kind": "cron",
         "expr": "0 10,12,14,16,18,20,22 * * *",
@@ -195,14 +192,14 @@
         "to": "chat:oc_b35138984cc18c6c1c764d42973318a1"
       },
       "state": {
-        "nextRunAtMs": 1772589600000,
-        "lastRunAtMs": 1772546400014,
-        "lastRunStatus": "ok",
-        "lastStatus": "ok",
-        "lastDurationMs": 67604,
-        "lastDeliveryStatus": "delivered",
-        "consecutiveErrors": 0,
-        "lastDelivered": true
+        "nextRunAtMs": 1772676000000,
+        "lastRunAtMs": 1772632800007,
+        "lastRunStatus": "error",
+        "lastStatus": "error",
+        "lastDurationMs": 120072,
+        "lastDeliveryStatus": "unknown",
+        "consecutiveErrors": 1,
+        "lastError": "cron: job execution timed out"
       }
     },
     {
@@ -210,7 +207,7 @@
       "name": "zclaw工作区每日备份",
       "enabled": true,
       "createdAtMs": 1772417307851,
-      "updatedAtMs": 1772420450530,
+      "updatedAtMs": 1772550027299,
       "schedule": {
         "kind": "cron",
         "expr": "0 23 * * *",
@@ -228,8 +225,15 @@
         "to": "chat:oc_734893e3844ad5b51156a02fd7fb5da9"
       },
       "state": {
-        "nextRunAtMs": 1772550000000,
-        "runningAtMs": 1772550000005
+        "nextRunAtMs": 1772636400000,
+        "lastRunAtMs": 1772550000006,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 27293,
+        "lastDelivered": true,
+        "lastDeliveryStatus": "delivered",
+        "consecutiveErrors": 0,
+        "runningAtMs": 1772636400002
       }
     },
     {
@@ -237,7 +241,7 @@
       "name": "zclaw自我巡检(每2小时)",
       "enabled": true,
       "createdAtMs": 1772427525697,
-      "updatedAtMs": 1772546574636,
+      "updatedAtMs": 1772632972157,
       "schedule": {
         "kind": "cron",
         "expr": "0 */2 * * *",
@@ -256,11 +260,11 @@
         "to": "chat:oc_734893e3844ad5b51156a02fd7fb5da9"
       },
       "state": {
-        "nextRunAtMs": 1772553733150,
-        "lastRunAtMs": 1772546533158,
+        "nextRunAtMs": 1772640133150,
+        "lastRunAtMs": 1772632933154,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 41478,
+        "lastDurationMs": 39003,
         "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0,
         "lastDelivered": true
