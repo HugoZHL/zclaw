@@ -6,7 +6,7 @@
       "name": "健康提醒(喝水+活动+护眼)",
       "enabled": true,
       "createdAtMs": 1772380267379,
-      "updatedAtMs": 1772623811385,
+      "updatedAtMs": 1772710210703,
       "schedule": {
         "kind": "cron",
         "expr": "0,30 10-19 * * *",
@@ -24,11 +24,11 @@
         "to": "chat:oc_734893e3844ad5b51156a02fd7fb5da9"
       },
       "state": {
-        "nextRunAtMs": 1772676000000,
-        "lastRunAtMs": 1772623800007,
+        "nextRunAtMs": 1772762400000,
+        "lastRunAtMs": 1772710200007,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 11378,
+        "lastDurationMs": 10696,
         "lastDelivered": true,
         "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0
@@ -39,7 +39,7 @@
       "name": "晚间健康提醒",
       "enabled": true,
       "createdAtMs": 1772380277994,
-      "updatedAtMs": 1772625610719,
+      "updatedAtMs": 1772712009612,
       "schedule": {
         "kind": "cron",
         "expr": "0 20 * * *",
@@ -57,11 +57,11 @@
         "to": "chat:oc_734893e3844ad5b51156a02fd7fb5da9"
       },
       "state": {
-        "nextRunAtMs": 1772712000000,
-        "lastRunAtMs": 1772625600006,
+        "nextRunAtMs": 1772798400000,
+        "lastRunAtMs": 1772712000005,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 10713,
+        "lastDurationMs": 9607,
         "lastDelivered": true,
         "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0
@@ -72,7 +72,7 @@
       "name": "健身提醒",
       "enabled": true,
       "createdAtMs": 1772380329114,
-      "updatedAtMs": 1772589614998,
+      "updatedAtMs": 1772676012645,
       "schedule": {
         "kind": "cron",
         "expr": "0 10 * * *",
@@ -90,11 +90,11 @@
         "to": "chat:oc_734893e3844ad5b51156a02fd7fb5da9"
       },
       "state": {
-        "nextRunAtMs": 1772676000000,
-        "lastRunAtMs": 1772589609037,
+        "nextRunAtMs": 1772762400000,
+        "lastRunAtMs": 1772676007489,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 5961,
+        "lastDurationMs": 5156,
         "lastDelivered": true,
         "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0
@@ -105,7 +105,7 @@
       "name": "AI每日早报",
       "enabled": true,
       "createdAtMs": 1772381644512,
-      "updatedAtMs": 1772589648255,
+      "updatedAtMs": 1772676056439,
       "schedule": {
         "kind": "cron",
         "expr": "0 10 * * *",
@@ -123,11 +123,11 @@
         "to": "chat:oc_734893e3844ad5b51156a02fd7fb5da9"
       },
       "state": {
-        "nextRunAtMs": 1772676000000,
-        "lastRunAtMs": 1772589614998,
+        "nextRunAtMs": 1772762400000,
+        "lastRunAtMs": 1772676012645,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 33257,
+        "lastDurationMs": 43794,
         "lastDelivered": true,
         "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0
@@ -138,7 +138,7 @@
       "name": "任务仪表盘推送",
       "enabled": true,
       "createdAtMs": 1772382971143,
-      "updatedAtMs": 1772591435077,
+      "updatedAtMs": 1772677837013,
       "schedule": {
         "kind": "cron",
         "expr": "30 10 * * *",
@@ -156,11 +156,11 @@
         "to": "chat:oc_734893e3844ad5b51156a02fd7fb5da9"
       },
       "state": {
-        "nextRunAtMs": 1772677800000,
-        "lastRunAtMs": 1772591406791,
+        "nextRunAtMs": 1772764200000,
+        "lastRunAtMs": 1772677807559,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 28286,
+        "lastDurationMs": 29454,
         "lastDelivered": true,
         "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0
@@ -172,7 +172,7 @@
       "name": "quant-progress-report",
       "enabled": true,
       "createdAtMs": 1772416418322,
-      "updatedAtMs": 1772632920079,
+      "updatedAtMs": 1772719286550,
       "schedule": {
         "kind": "cron",
         "expr": "0 10,12,14,16,18,20,22 * * *",
@@ -192,14 +192,14 @@
         "to": "chat:oc_b35138984cc18c6c1c764d42973318a1"
       },
       "state": {
-        "nextRunAtMs": 1772676000000,
-        "lastRunAtMs": 1772632800007,
-        "lastRunStatus": "error",
-        "lastStatus": "error",
-        "lastDurationMs": 120072,
-        "lastDeliveryStatus": "unknown",
-        "consecutiveErrors": 1,
-        "lastError": "cron: job execution timed out"
+        "nextRunAtMs": 1772762400000,
+        "lastRunAtMs": 1772719200008,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 86542,
+        "lastDeliveryStatus": "delivered",
+        "consecutiveErrors": 0,
+        "lastDelivered": true
       }
     },
     {
@@ -207,7 +207,7 @@
       "name": "zclaw工作区每日备份",
       "enabled": true,
       "createdAtMs": 1772417307851,
-      "updatedAtMs": 1772550027299,
+      "updatedAtMs": 1772636425072,
       "schedule": {
         "kind": "cron",
         "expr": "0 23 * * *",
@@ -225,11 +225,11 @@
         "to": "chat:oc_734893e3844ad5b51156a02fd7fb5da9"
       },
       "state": {
-        "nextRunAtMs": 1772636400000,
-        "lastRunAtMs": 1772550000006,
+        "nextRunAtMs": 1772722800000,
+        "lastRunAtMs": 1772636400003,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 27293,
+        "lastDurationMs": 25069,
         "lastDelivered": true,
         "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0
@@ -240,7 +240,7 @@
       "name": "zclaw自我巡检(每2小时)",
       "enabled": true,
       "createdAtMs": 1772427525697,
-      "updatedAtMs": 1772632972157,
+      "updatedAtMs": 1772719371596,
       "schedule": {
         "kind": "cron",
         "expr": "0 */2 * * *",
@@ -259,11 +259,11 @@
         "to": "chat:oc_734893e3844ad5b51156a02fd7fb5da9"
       },
       "state": {
-        "nextRunAtMs": 1772640133150,
-        "lastRunAtMs": 1772632933154,
+        "nextRunAtMs": 1772726533150,
+        "lastRunAtMs": 1772719333155,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 39003,
+        "lastDurationMs": 38441,
         "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0,
         "lastDelivered": true
