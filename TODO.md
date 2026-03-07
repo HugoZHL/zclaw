@@ -64,8 +64,8 @@
 ### 已完成
 
 ## 待安装技能
-- [ ] self-improving-agent (v1.0.11) — 自我反思和错误学习，等 ClawHub rate limit 恢复后安装（2026-03-06 10:02 UTC 再试仍 rate limit）
-- [ ] tavily-search 更新 → 1.0.0 — 等 rate limit 恢复（2026-03-06 10:02 UTC 再试仍 rate limit）
+- [ ] self-improving-agent (v1.0.11) — 自我反思和错误学习，等 ClawHub rate limit 恢复后安装（2026-03-06 16:02 UTC 再试仍 rate limit）
+- [ ] tavily-search 更新 → 1.0.0 — 等 rate limit 恢复（2026-03-07 08:02 UTC 再试仍 rate limit）
 - [ ] crypto-market-data — ⚠️ VirusTotal 标记可疑，需 zhl 确认是否 --force 安装
 - [ ] crypto-stock-market-data — ⚠️ VirusTotal 标记可疑，需 zhl 确认是否 --force 安装
 - [ ] n8n-workflow-automation — 🟡 需要 n8n 服务，工作流自动化（需确认是否部署 n8n）

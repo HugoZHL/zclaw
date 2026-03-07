@@ -57,6 +57,13 @@
 ## 实验结论
 - SGD 替换 AdamW 做 RL post-training：**已验证不行**（2026-03-02），大规模场景下不 work，从待办中移除
 
+## 飞书官方插件
+- 2026-03-07 安装了飞书官方 OpenClaw 插件 `@larksuiteoapi/feishu-openclaw-plugin` v2026.3.7-beta.1
+- 安装/更新工具：`feishu-plugin-onboard`（install / update / doctor / info）
+- 诊断命令：`/feishu start`、`/feishu doctor`、`/feishu auth`
+- 旧内置 feishu 插件已自动禁用
+- ⚠️ 升级 OpenClaw 后需手动禁用其他飞书插件
+
 ## 技术笔记
 - 飞书图片可通过 im/v1/messages/{msg_id}/resources/{image_key}?type=image API 下载（需 tenant_access_token）
 - 知乎 zhuanlan 反爬极强，服务器IP被完全封锁，API/Googlebot UA/jina 全部失败，只能靠搜索引擎摘要获取大意

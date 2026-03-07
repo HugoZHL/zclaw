@@ -18,3 +18,9 @@ _system/config/openclaw.json
 _system/sessions/
 _system/memory-main.sqlite
 _system/feishu/
+
+# QQ mail credentials
+.qq_mail_creds*
+
+# GitHub zclaw credentials
+.github_zclaw_creds
